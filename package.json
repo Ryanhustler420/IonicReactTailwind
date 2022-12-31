@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "4.6.1",
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.6.1",
     "@capacitor/haptics": "4.1.0",
@@ -19,6 +20,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "concurrently": "^7.6.0",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
     "react": "^18.2.0",
@@ -42,6 +44,12 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
+    "dev": "concurrently \"ionic serve\" \"npm run watch-css\"",
+    "bundle": "npm run build-css && npm run build",
+
+    "watch-css": "tailwindcss build app.css -o public/style.css -w",
+    "build-css": "tailwindcss build app.css -o public/style.css",
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
@@ -66,7 +74,10 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "4.6.1"
+    "@capacitor/cli": "4.6.1",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
   },
   "description": "An Ionic project"
 }
