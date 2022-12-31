@@ -14,7 +14,12 @@ const network = _.debounce(function () {
     .then(console.log);
 }, 1000);
 
-const Home: React.FC = () => {
+const Home: React.FC<{
+  onShowTabs: () => void;
+  onHideTabs: () => void;
+  rendering: boolean;
+}> = props => {
+  if (props.rendering) { props.onHideTabs(); }
   const applicationCtx = useContext(ApplicationContext);
   network();
 
