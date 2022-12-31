@@ -596,12 +596,3 @@ video {
 .collapse {
   visibility: collapse;
 }
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
-}

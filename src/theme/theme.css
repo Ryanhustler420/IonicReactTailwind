@@ -1,3 +1,10 @@
+/* 
+    https://ionicframework.com/docs/theming/colors
+    https://ionicframework.com/docs/theming/themes
+    https://ionicframework.com/docs/theming/color-generator
+    https://ionicframework.com/docs/layout/css-utilities
+    https://ionicframework.com/docs/theming/dark-mode
+*/
 :root {
     --ion-toolbar-background: var(--ion-color-secondary);
     --ion-toolbar-color: var(--ion-color-primary);

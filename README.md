@@ -23,7 +23,9 @@ Create free Ionic account? No
 
 ##### 3rd Party Packages
 
-> [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm > [Android Development](https://ionicframework.com/docs/developing/android)
+> [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm
+> [Android Development](https://ionicframework.com/docs/developing/android)
+> [React Redux](https://react-redux.js.org/tutorials/quick-start)
 
 [Issues]
 
