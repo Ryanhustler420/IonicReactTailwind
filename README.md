@@ -24,11 +24,13 @@ Create free Ionic account? No
 ##### 3rd Party Packages
 
 > [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm
+> [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 > [Android Development](https://ionicframework.com/docs/developing/android)
 > [React Redux](https://react-redux.js.org/tutorials/quick-start)
 
 [Issues]
 
+> [Bootstrap Css](https://stackoverflow.com/questions/38684023/bootstrap-4-flex-grid-system-only)
 > [Capacitor Error](https://stackoverflow.com/questions/67633486/an-error-occurred-while-running-subprocess-capacitor-when-creating-new-ionic-pro)
 
 > [Gradle Not Exist](https://stackoverflow.com/questions/63267827/capacitor-settings-gradle-as-it-does-not-exist)

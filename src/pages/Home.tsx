@@ -5,8 +5,8 @@ import ApplicationContext from '../data/application-context';
 import _ from "lodash";
 import './Home.css';
 
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../redux/reducers/counterSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { decrement, increment } from "../redux/reducers/counterSlice";
 
 const network = _.debounce(function () {
   fetch("https://raisehand.software/v1")

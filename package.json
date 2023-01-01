@@ -22,6 +22,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "bootstrap": "^5.2.3",
     "concurrently": "^7.6.0",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
@@ -48,10 +49,7 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "dev": "concurrently \"ionic serve\" \"npm run watch-css\"",
-    "bundle": "npm run build-css && npm run build",
-    "watch-css": "tailwindcss build app.css -o public/style.css -w",
-    "build-css": "tailwindcss build app.css -o public/style.css",
+    "dev": "concurrently \"ionic serve\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
@@ -74,12 +72,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@capacitor/cli": "4.6.1",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
   },
   "description": "An Ionic project"
 }
