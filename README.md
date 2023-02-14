@@ -11,14 +11,30 @@ Starter template: blank
 Create free Ionic account? No
 ```
 
-- ```ionic integrations enable capacitor```
-- ```ionic capacitor add android```
-- ```ionic capacitor add ios```
-- ```ionic capacitor copy android **recommanded**```
-- ```ionic capacitor copy android -l **live_reloading**```
-- ```ionic capacitor sync android **recommanded**```
-- ```npx cap open android **optional**```
-- ```npm run dev```
+```cmd 
+ionic integrations enable capacitor
+```
+```cmd
+ionic capacitor add android
+```
+```cmd
+ionic capacitor add ios
+```
+```cmd
+ionic capacitor copy android **recommanded**
+```
+```cmd
+ionic capacitor copy android -l **live_reloading**
+```
+```cmd
+ionic capacitor sync android **recommanded**
+```
+```cmd
+npx cap open android **optional**
+```
+```cmd
+npm run dev
+```
 
 ##### 3rd Party Packages
 
