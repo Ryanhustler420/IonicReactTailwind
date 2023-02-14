@@ -29,9 +29,6 @@ npm install @capacitor/android
 npm install @capacitor/ios
 ```
 ```cmd
-ionic capacitor add ios
-```
-```cmd
 ionic capacitor copy android ###### recommanded
 ```
 ```cmd
