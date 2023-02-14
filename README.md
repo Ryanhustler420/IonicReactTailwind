@@ -21,22 +21,24 @@ npm install -g @ionic/cli
 ionic integrations enable capacitor
 ```
 ```cmd
-ionic capacitor add android
+ionic capacitor add android ###### if not worked
+npm install @capacitor/android
+npm install @capacitor/ios
 ```
 ```cmd
 ionic capacitor add ios
 ```
 ```cmd
-ionic capacitor copy android **recommanded**
+ionic capacitor copy android ###### recommanded
 ```
 ```cmd
-ionic capacitor copy android -l **live_reloading**
+ionic capacitor copy android -l ###### live_reloading
 ```
 ```cmd
-ionic capacitor sync android **recommanded**
+ionic capacitor sync android ###### recommanded
 ```
 ```cmd
-npx cap open android **optional**
+npx cap open android ###### optional
 ```
 ```cmd
 npm run dev
