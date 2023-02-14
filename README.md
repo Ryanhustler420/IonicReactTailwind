@@ -11,6 +11,12 @@ Starter template: blank
 Create free Ionic account? No
 ```
 
+```cmd
+npm uninstall -g ionic
+npm uninstall -g @ionic/cli
+npm install -g @ionic/cli
+```
+
 ```cmd 
 ionic integrations enable capacitor
 ```
