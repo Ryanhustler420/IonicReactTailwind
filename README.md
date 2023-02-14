@@ -22,6 +22,9 @@ ionic integrations enable capacitor
 ```
 ```cmd
 ionic capacitor add android ###### if not worked
+OR
+npm install @capacitor/cli @capacitor/cli @capacitor/android @capacitor/ios
+OR
 npm install @capacitor/android
 npm install @capacitor/ios
 ```
