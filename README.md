@@ -47,7 +47,7 @@ npm run dev
 
 ##### 3rd Party Packages
 
-> [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm
+> [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm)
 
 > [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
