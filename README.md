@@ -47,6 +47,10 @@ npm run dev
 
 ##### 3rd Party Packages
 
+> [Splash screen generator](https://dalezak.medium.com/generate-app-icon-and-splash-screen-images-for-ionic-framework-using-capacitor-e1f8c6ef0fd4)
+
+> [Android resources helper](https://dalezak.medium.com/generate-app-icon-and-splash-screen-images-for-ionic-framework-using-capacitor-e1f8c6ef0fd4)
+
 > [Integration Tailwind](https://larainfo.com/blogs/how-to-install-tailwind-css-with-npm)
 
 > [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
