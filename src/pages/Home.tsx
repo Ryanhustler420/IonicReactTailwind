@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import ApplicationContext from '../data/application-context';
+import Highlight from 'react-highlight';
 import _ from "lodash";
 import './Home.css';
 
@@ -36,12 +37,9 @@ const Home: React.FC<{
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
+        <Highlight className='java text-4xl'>
+          <div dangerouslySetInnerHTML={{ __html: "for <input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />i in range(1, 5):\n\tfor <input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />j in range(<input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />i):\n\t\tprint(<input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />j, end=\"\")\n\tprint()", }}></div>
+        </Highlight>
       </IonContent>
     </IonPage>
   );

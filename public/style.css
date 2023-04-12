@@ -1,11 +1,41 @@
 /* @tailwind base;
 @tailwind components; */
 
-.collapse {
-  visibility: collapse
+.h-6 {
+  height: 1.5rem
 }
 
-.text-yellow-200 {
+.w-8 {
+  width: 2rem
+}
+
+.border-none {
+  border-style: none
+}
+
+.bg-transparent {
+  background-color: transparent
+}
+
+.text-center {
+  text-align: center
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.text-green-500 {
   --tw-text-opacity: 1;
-  color: rgb(254 240 138 / var(--tw-text-opacity))
+  color: rgb(34 197 94 / var(--tw-text-opacity))
 }
