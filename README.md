@@ -1,4 +1,12 @@
-As of :: 31-12-2022
+# How to clone
+
+```
+git clone https://github.com/Ryanhustler420/IonicReactTailwind.git
+cd IonicReactTailwind
+git remote rm origin
+npm i
+npm run dev
+```
 
 - ```npm i -g ionic --save```
 - ```ionic start```
