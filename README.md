@@ -6,7 +6,7 @@ As of :: 31-12-2022
 ```cmd
 Use the app creation wizard? No
 Framework: React
-Project name: ionic-react
+Project name: appname
 Starter template: blank
 Create free Ionic account? No
 ```
@@ -45,7 +45,23 @@ npx cap open android @REM optional
 npm run dev
 ```
 
+NOTE:
+
+- Close the terminal/editor if not syncing android command not working, and then redo the process.
+
+- Close android studio if new capacitor added library not visible on the project
+
+```cmd
+npm install @capacitor/{api}
+npx cap sync
+npx cap update
+```
+
 ##### 3rd Party Packages
+
+> [Splash screen generator](https://hotpot.ai/templates/splash-screen)
+
+> [Ape Tools](https://apetools.webprofusion.com/#/)
 
 > [Splash screen generator](https://dalezak.medium.com/generate-app-icon-and-splash-screen-images-for-ionic-framework-using-capacitor-e1f8c6ef0fd4)
 
@@ -66,3 +82,43 @@ npm run dev
 > [Capacitor Error](https://stackoverflow.com/questions/67633486/an-error-occurred-while-running-subprocess-capacitor-when-creating-new-ionic-pro)
 
 > [Gradle Not Exist](https://stackoverflow.com/questions/63267827/capacitor-settings-gradle-as-it-does-not-exist)
+
+# Build
+
+> use android studio `image assets` to create app icon
+
+> Change all the keyword `appname` to `yourappname` in the source code
+
+> Overwrite the `build/assets/icon` icons with your icons and let the name as it is
+
+> Change the `icons` path in `build/assets/manifest.json`
+
+> use `apetools` to create splash screen and overwrite the existing splash screen with yours.
+
+> Always run `npm run dev` and then `ionic capacitor sync android` and then `npx cap open android`
+
+> Build the process and update version
+
+# Android Release
+
+>   keep the `.rsa` safe for that app to release
+
+-   Update the app `version`
+
+-   Mark `live` to `true`
+
+-   Test the app
+
+-   Build the app
+
+-   Update the android app `version`
+
+-   Build the android app
+
+-   Test the android app
+
+-   Generate the apk
+
+-   Store the apk to release `apks` folder
+
+-   To `release` android apk, please update the app version and please 

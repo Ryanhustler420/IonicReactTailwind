@@ -1,10 +1,15 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'ionic-react',
+  appId: 'com.appname.appname',
+  appName: 'appname',
   webDir: 'build',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    }
+  }
 };
 
 export default config;

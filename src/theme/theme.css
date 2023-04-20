@@ -6,8 +6,8 @@
     https://ionicframework.com/docs/theming/dark-mode
 */
 :root {
-    --ion-toolbar-background: var(--ion-color-secondary);
+    /*--ion-toolbar-background: var(--ion-color-secondary);
     --ion-toolbar-color: var(--ion-color-primary);
     --ion-tab-bar-background: var(--ion-color-secondary);
-    --ion-tab-bar-color-selected: var(--ion-color-primary);
+    --ion-tab-bar-color-selected: var(--ion-color-primary);*/
 }

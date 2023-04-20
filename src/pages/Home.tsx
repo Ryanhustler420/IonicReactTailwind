@@ -1,45 +1,68 @@
-import React, { useContext } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import ApplicationContext from '../data/application-context';
-import Highlight from 'react-highlight';
 import _ from "lodash";
+import { useHistory } from 'react-router';
+import { Haptics } from '@capacitor/haptics';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useContext, useEffect, useState } from 'react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+
+import { getPostById } from "../apis";
+import { Resizer } from "../components/Resizer";
+import { toggleDark } from "../utils/common/helper";
+
+import config from "../release/config";
+import Capacitor from '../utils/Capacitor';
+import AuthState from '../utils/common/auth-state';
+import ApplicationContext from '../data/application-context';
+
+import Sound from '../sfxs';
+import WinFx from '../sfxs/mixkit-win-game';
+import LooseFx from '../sfxs/mixkit-lose-game';
+
 import './Home.css';
 
-// import { useSelector, useDispatch } from "react-redux";
-// import { decrement, increment } from "../redux/reducers/counterSlice";
-
-const network = _.debounce(function () {
-  fetch("https://raisehand.software/v1")
-    .then((response) => response.json())
-    .then(console.log);
-}, 1000);
-
+const screen = { width: 0, name: 'sm' };
 const Home: React.FC<{
   onShowTabs: () => void;
   onHideTabs: () => void;
   rendering: boolean;
 }> = props => {
-  if (props.rendering) { props.onHideTabs(); }
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const authState = new AuthState();
   const applicationCtx = useContext(ApplicationContext);
-  network();
+  const user: {} = useSelector((state: any) => state.userState.user);
+  const [post, setPost] = useState<any>({});
 
-  // const count = useSelector((state: any) => state.counter.value);
-  // const dispatch = useDispatch();
-  // console.log(count);
-  // dispatch(increment());
+  useEffect(() => { if (props.rendering) { props.onShowTabs(); } });
+
+  const breakPointTrigger = (width: number | undefined, name: string | undefined) => {
+    screen.width = width as number;
+    screen.name = name as string;
+  };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>Home</IonTitle>
+          <IonButtons slot="end">
+            <IonButton disabled>
+              v{config.latest_release_version}
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
+      <Resizer onChange={breakPointTrigger} />
       <IonContent fullscreen>
-        <Highlight className='java text-4xl'>
-          <div dangerouslySetInnerHTML={{ __html: "for <input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />i in range(1, 5):\n\tfor <input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />j in range(<input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />i):\n\t\tprint(<input class='w-8 text-center h-6 text-green-500 text-sm font-bold bg-transparent border-none' />j, end=\"\")\n\tprint()", }}></div>
-        </Highlight>
+        <div className="flex flex-col space-y-5">
+          <IonButton onClick={() => { Haptics.vibrate({ duration: 1000 }); }}>Vibrate</IonButton>
+          <IonButton onClick={() => { Sound(WinFx); }}>Win</IonButton>
+          <IonButton onClick={() => { Sound(LooseFx); }}>Lose</IonButton>
+          <IonButton onClick={() => { toggleDark(); }}>Change Theme</IonButton>
+          <IonButton onClick={() => { Capacitor.toast('Toast'); }}>Toast</IonButton>
+          <IonButton onClick={() => { getPostById(1, setPost, console.error); }}>Fetch Post</IonButton>
+          <div>{JSON.stringify(post?.data)}</div>
+        </div>
       </IonContent>
     </IonPage>
   );
