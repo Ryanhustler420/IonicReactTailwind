@@ -93,9 +93,13 @@ npx cap update
 
 # Build
 
-> use android studio `image assets` to create app icon
+> Delete the already created `android` folder
+
+> Use android studio `image assets` to create app icon
 
 > Change all the keyword `appname` to `yourappname` in the source code
+
+> Rebuild the android sync using `ionic capacitor sync android` command
 
 > Overwrite the `build/assets/icon` icons with your icons and let the name as it is
 
