@@ -5,18 +5,27 @@ import { CapacitorHttp, HttpResponse } from '@capacitor/core';
 
 const authState = new AuthState();
 
+const handle = (response: HttpResponse, cb: (response: HttpResponse) => void) => {
+    switch(response.status) {
+        case 401:
+            authState.saveUser(null);
+            authState.saveToken('');
+            cb(response);
+            break;
+        case 200:
+        case 201:
+            cb(response);
+            break;
+        default:
+            throw { response };
+    }
+}
+
 export const getPosts = _.debounce((cb: (response: HttpResponse) => void, err: (e: any) => void) => {
     CapacitorHttp.get({
         url: routes.GET_POSTS,
-        headers: { 'Content-Type': 'application/json', },
-    }).then(cb).catch(err);
-});
-
-export const getPostById = _.debounce((id: number, cb: (response: HttpResponse) => void, err: (e: any) => void) => {
-    CapacitorHttp.get({
-        url: `${routes.GET_POST_BY_ID}/${id}`,
-        headers: { 'Content-Type': 'application/json', },
-    }).then(cb).catch(err);
+        headers: commonHeader(),
+    }).then(e => handle(e, cb)).catch(err);
 });
 
 export const postCreateUser = _.debounce((data: { id: string, uid: string, text: string }, cb: (response: HttpResponse) => void, err: (e: any) => void) => {
@@ -24,7 +33,7 @@ export const postCreateUser = _.debounce((data: { id: string, uid: string, text:
         url: routes.POST_POSTS,
         headers: commonHeader(),
         data: JSON.stringify(data),
-    }).then(cb).catch(err);
+    }).then(e => handle(e, cb)).catch(err);
 });
 
 const commonHeader = () => {

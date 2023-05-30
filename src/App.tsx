@@ -71,7 +71,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // let isAuthenticated = authState.validateUser();
     // if (!isAuthenticated) historyMethodsIPCRef.current?.clearAndGoto(components.login.path);
-  }, []);
+  });
 
   return (
     <IonApp>
