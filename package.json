@@ -60,7 +60,7 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "dev": "concurrently \"ionic serve\" \"npm run watch-css\"",
+    "dev": "concurrently \"npm start\" \"npm run watch-css\"",
     "bundle": "npm run build-css && npm run build",
     "watch-css": "tailwindcss build app.css -o public/style.css -w",
     "build-css": "tailwindcss build app.css -o public/style.css",
