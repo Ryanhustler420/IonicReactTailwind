@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useContext, useEffect, useState } from 'react';
 import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
-import { getPostById } from "../apis";
+// import { getPostById } from "../apis";
 import { Resizer } from "../components/Resizer";
 import { toggleDark } from "../utils/common/helper";
 
@@ -60,7 +60,7 @@ const Home: React.FC<{
           <IonButton onClick={() => { Sound(LooseFx); }}>Lose</IonButton>
           <IonButton onClick={() => { toggleDark(); }}>Change Theme</IonButton>
           <IonButton onClick={() => { Capacitor.toast('Toast'); }}>Toast</IonButton>
-          <IonButton onClick={() => { getPostById(1, setPost, console.error); }}>Fetch Post</IonButton>
+          {/* <IonButton onClick={() => { getPostById(1, setPost, console.error); }}>Fetch Post</IonButton> */}
           <div>{JSON.stringify(post?.data)}</div>
         </div>
       </IonContent>
